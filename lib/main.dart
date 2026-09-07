@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
-    ),
-  );
+  runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: Home()));
 }
 
 class Home extends StatelessWidget {
@@ -25,34 +20,53 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             // TODO 1: Add a TextButton
-            // - child: Text saying "click me"
-            // - onPressed: print "I am a text button"
-            const SizedBox(height: 16), // Replace this line with your TextButton
+
+            TextButton(
+              onPressed: () {
+                print("I am a test button");
+              },
+              child: const Text("click me"),
+            ),
             
             // TODO 2: Add an ElevatedButton
-            // - child: Text saying "click me"
-            // - onPressed: print "I am an elevated button"
-            // - style: Make the background color red using MaterialStateProperty or ElevatedButton.styleFrom
-            const SizedBox(height: 16), // Replace this line with your ElevatedButton
+            ElevatedButton(
+              onPressed: () {
+                print("I am an elevated button");
+              },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+
+              child: const Text("click me"),
+            ),
 
             // TODO 3: Add an OutlinedButton
-            // - child: Text saying "click me"
-            // - onPressed: print "I am an outlined button"
-            const SizedBox(height: 16), // Replace this line with your OutlinedButton
+            OutlinedButton(
+              onPressed: () {
+                print("I am an outlined button");
+              },
+              child: const Text("click me"),
+            ),
+            const SizedBox(height: 16),
 
             // TODO 4: Add an IconButton
-            // - icon: Use the Icon widget with Icons.alarm
-            // - onPressed: print "I am an icon button"
-            const SizedBox(height: 16), // Replace this line with your IconButton
-
+            IconButton(
+              onPressed: () {
+                print("I am an icon button");
+              },
+              icon: const Icon(Icons.alarm),
+            ),
+            const SizedBox(
+              height: 16,
+            ), // Replace this line with your IconButton
             // TODO 5: Add an ElevatedButton.icon
-            // - icon: Use the Icon widget with Icons.alarm
-            // - label: Text saying "click me"
-            // - onPressed: print "I am an elevated button with icon"
-            const SizedBox(height: 16), // Replace this line with your ElevatedButton.icon
-
+            ElevatedButton.icon(
+              onPressed: () {
+                print("I am an elevated button with icon");
+              },
+              icon: const Icon (Icons.alarm),
+              label: const Text("click me"),
+            ),
+            
           ],
         ),
       ),
